@@ -1,0 +1,54 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "Current",
+    title: "Senior Frontend Dev",
+    company: "Pragma SA",
+    description:
+      "Currently, I work as a Senior Frontend Developer and have been involved in various projects with multiple clients of the company. In one of these projects, I led the frontend team in implementing new functionalities, reviewing pull requests (PR), and ensuring the correct quality of code and system performance for a specific client. I also took charge of two migrations to new technologies for highly complex systems. Presently, we continue to follow processes for the implementation and development of high-quality and high-performance software.",
+    link: "https://www.pragma.co/en/",
+  },
+  {
+    date: "December 24 2020 - July 31, 2022",
+    title: "Webmaster - Professional IV",
+    company: "Colpensiones",
+    description:
+      "Among my functions, I stand out for the frontend development of the new corporate image following gov.co guidelines with rigorous accessibility control. Additionally, I implemented functionalities as requested by different departments. The web team received a 'Silver Star' recognition from the commercial vice-presidency, acknowledging our achievements.",
+    link: "https://www.colpensiones.gov.co/",
+  },
+  {
+    date: "2018 - 2020",
+    title: "Frontend Dev and Leadership",
+    company: "Rehobot Technology SAS",
+    description:
+      "I led development teams, participated in frontend development (web and mobile app), and designed user experiences. Additionally, I was responsible for engaging with the client in defining business models, technology, and the end-user experience.",
+  },
+  {
+    date: "June 2019 - December 2020",
+    title: "Litsor Publicidad LTDA",
+    company: "Full Stack and Support Engineer",
+    description:
+      "Development of new applications upon client requests for the company, full-stack development, and code updates. Additionally, provided support for existing products.",
+    link: "https://litsor.com/",
+  },
+  {
+    date: "2017 - 2018",
+    title: "PCD Multiformas SAS",
+    company: "Full Stack",
+    description:
+      "I developed all the company's websites. Additionally, I created two e-commerce platforms for direct sales, managed Google Ads accounts, and handled the implementation of SEO.",
+    link: "https://multiformas.com.co/",
+  },
+];
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

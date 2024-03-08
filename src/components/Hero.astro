@@ -1,0 +1,40 @@
+---
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div class="max-w-xl">
+  <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hi!, i`m Isai Colina
+  </h1>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-cyan-200 [&>strong]:text-cyan-800 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    Senior Frontend Developer with over <strong>7 years of experience</strong>,
+    specializing in web development and UI/UX, creating unique experiences.
+  </p>
+  <div class="flex flex-wrap mt-8">
+    <Badge>TypeScript / JavaScript</Badge>
+    <Badge>HTML / CSS</Badge>
+    <Badge>Suite Adobe / Figma</Badge>
+    <Badge>NodeJs / PHP</Badge>
+    <Badge>ReactJS / NextJs / Astro / Angular</Badge>
+    <Badge>MySQL / MongoDB</Badge>
+    <Badge>GCP / AWS</Badge>
+  </div>
+
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:isaicolinapinto@gmail.com">
+      <MailIcon class="size-4" />
+      Contact
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/isai-colina-pinto-57123b155/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+  </nav>
+</div>

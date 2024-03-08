@@ -1,0 +1,48 @@
+---
+const personalImageAlt = "Isai Colina Senior Developer";
+import me from "../assets/isaiSquare.jpg";
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+>
+  <img
+    width="200"
+    height="200"
+    src={me.src}
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-64 aspect-square rounded-2xl"
+    style="object-position: 50% 50%"
+  />
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-cyan-500 dark:[&>p>strong]:text-cyan-200 text-pretty order-2"
+  >
+    <p>
+      Hello! My name is Isai Colina, I'm a professional with over <strong>
+        7 years of experience in web development.</strong
+      > Throughout my career, I've gained specialized knowledge and technical skills
+      in the field of web development. I'm passionate about working with cutting-edge
+      technologies and staying updated in an ever-evolving environment.
+    </p>
+    <p>
+      As a web development expert, I have experience using various technologies,
+      programming languages, and frameworks. I've been involved in creating
+      interactive and responsive websites, optimizing the user experience, and
+      ensuring site functionality.
+    </p>
+
+    <p>
+      In addition to my technical expertise, <strong>
+        my Bachelor's degree in Business Administration provides me with a
+        unique perspective on web development.</strong
+      > I have a solid understanding of business goals and the importance of digital
+      strategy in a company's success, along with the necessary tools to lead teams.
+    </p>
+
+    <p>
+      I'm results-oriented, creative, and passionate about tackling new
+      challenges in web development. I enjoy working in collaborative teams and
+      have the ability to turn ideas into tangible projects.
+    </p>
+  </div>
+</article>

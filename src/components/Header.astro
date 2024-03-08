@@ -1,0 +1,120 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+import imgRounded from "@/assets/isaiRounded.png";
+const personalImageAlt = "Isai Colina Developer";
+
+const navItems = [
+  {
+    title: "Experience",
+    label: "experience",
+    url: "/#experience",
+  },
+  {
+    title: "Projects",
+    label: "projects",
+    url: "/#projects",
+  },
+  {
+    title: "About",
+    label: "about",
+    url: "/#about",
+  },
+  {
+    title: "Contact",
+    label: "contact",
+    url: "mailto:isaicolinapinto@gmail.com",
+  },
+];
+---
+
+<header
+  class="section scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl flex items-center justify-between py-5 app__navbar"
+>
+  <img
+    class="rounded-full shadow-lg size-16 hidden md:block lg:block"
+    src={imgRounded.src}
+    alt={personalImageAlt}
+  />
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center none"
+  >
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-cyan-700 dark:hover:text-cyan-500 "
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-cyan-500");
+            } else {
+              item.classList.remove("text-cyan-500");
+            }
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect();
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      }
+    };
+  });
+</script>
+
+<style>
+  nav {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  @keyframes nav-shadown {
+    to {
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+    }
+  }
+
+  .app__navbar {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: hsla(0, 0%, 22%, 0.1);
+    border: 1px solid hsla(0, 0%, 41%, 0.3);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin-top: 20px;
+  }
+</style>
