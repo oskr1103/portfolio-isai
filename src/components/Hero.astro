@@ -3,6 +3,8 @@ import Badge from "@/components/Badge.astro";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
+import MediumIcon from "@/components/icons/Medium.astro";
+import YoutubeIcon from "@/components/icons/Youtube.astro";
 ---
 
 <div class="max-w-xl">
@@ -17,15 +19,6 @@ import SocialPill from "@/components/SocialPill.astro";
     Senior Frontend Developer with over <strong>7 years of experience</strong>,
     specializing in web development and UI/UX, creating unique experiences.
   </p>
-  <div class="flex flex-wrap mt-8">
-    <Badge>TypeScript / JavaScript</Badge>
-    <Badge>HTML / CSS</Badge>
-    <Badge>Suite Adobe / Figma</Badge>
-    <Badge>NodeJs / PHP</Badge>
-    <Badge>ReactJS / NextJs / Astro / Angular</Badge>
-    <Badge>MySQL / MongoDB</Badge>
-    <Badge>GCP / AWS</Badge>
-  </div>
 
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:isaicolinapinto@gmail.com">
@@ -36,5 +29,22 @@ import SocialPill from "@/components/SocialPill.astro";
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
+    <SocialPill href="https://medium.com/@isaicolinapinto_70265">
+      <MediumIcon class="size-4" />
+      Medium
+    </SocialPill>
+    <SocialPill href="https://www.youtube.com/channel/UCT8C9RwEz_Ij7dYfvfbhCrw">
+      <YoutubeIcon class="size-4" />
+      Youtube
+    </SocialPill>
   </nav>
+  <div class="flex flex-wrap mt-8">
+    <Badge>TypeScript / JavaScript</Badge>
+    <Badge>HTML / CSS</Badge>
+    <Badge>ReactJS / NextJs / Astro / Angular</Badge>
+    <Badge>Suite Adobe / Figma</Badge>
+    <Badge>NodeJs / PHP</Badge>
+    <Badge>MySQL / MongoDB</Badge>
+    <Badge>GCP / AWS</Badge>
+  </div>
 </div>

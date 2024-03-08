@@ -8,6 +8,7 @@ import damacomImg from "../assets/projects/damacom.webp";
 import ulpanImg from "../assets/projects/ulpan.webp";
 import catsImg from "../assets/projects/cats.webp";
 import comparteImg from "../assets/projects/comparte.webp";
+import spotifyImg from "../assets/projects/spotify.webp";
 
 const PROJECTS = [
   {
@@ -54,6 +55,14 @@ const PROJECTS = [
     github: "https://github.com/oskr1103/front-compart",
     image: comparteImg.src,
   },
+  {
+    title: "Clone Spotify",
+    description:
+      "I developed a Spotify clone as an entry project in my current job using the Spotify API. It was built using React with TypeScript, Redux, and SASS, while adhering to the clean code methodology and best practices. Note: Authorization is required to access it since it is in development mode. If you would like access, please write to me, and I will be happy to provide it.",
+    link: "https://isai-music-clone.netlify.app/",
+    github: "https://github.com/oskr1103/music-app",
+    image: spotifyImg.src,
+  },
 ];
 ---
 
@@ -64,9 +73,8 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              alt="Works Isai Colina"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
               src={image}
             />
           </div>
