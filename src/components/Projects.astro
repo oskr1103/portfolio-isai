@@ -1,101 +1,189 @@
 ---
-import GitHub from "./icons/GitHub.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import { Image } from "astro:assets";
 import alexandraImg from "../assets/projects/alexandra.webp";
 import damacomImg from "../assets/projects/damacom.webp";
-import ulpanImg from "../assets/projects/ulpan.webp";
 import catsImg from "../assets/projects/cats.webp";
-import comparteImg from "../assets/projects/comparte.webp";
-import spotifyImg from "../assets/projects/spotify.webp";
 
-const PROJECTS = [
+const AI_WORK = [
+  {
+    title: "Enterprise AI & Agent Platform",
+    focus: "Architecture · Delivery · Governance",
+    summary:
+      "Architecture and delivery of an enterprise AI capability integrating identity, memory, reasoning, retrieval, internal tools, and proactive events across multiple communication channels.",
+    details: [
+      "Designed reusable agent capabilities for enterprise workflows.",
+      "Defined ownership, delivery standards, and production operating models.",
+      "Connected identity, memory, retrieval, tools, and multi-channel interfaces.",
+    ],
+    flow: ["Identity", "Context & memory", "Reasoning", "Tools & events"],
+  },
+  {
+    title: "AI Support System",
+    focus: "Production Agents · Tool Use · Escalation",
+    summary:
+      "Production-oriented agentic support system designed to resolve internal requests, invoke business tools, retrieve organizational knowledge, and escalate cases with context when human intervention is required.",
+    details: [
+      "Built agent flows for request resolution and knowledge retrieval.",
+      "Integrated business tools with clear escalation boundaries.",
+      "Preserved human oversight for ambiguous or high-risk cases.",
+    ],
+    flow: ["Request", "Knowledge & tools", "Resolution", "Human escalation"],
+  },
+  {
+    title: "Agentic Decision System",
+    focus: "Multi-Agent · Analysis · Human Gates",
+    summary:
+      "Multi-agent architecture for complex business analysis, combining specialized evaluation agents, structured case files, critical review, and human-gated decision memos.",
+    details: [
+      "Coordinated specialized agents for evaluation and critical review.",
+      "Structured case files to support traceable decisions.",
+      "Required human approval before high-impact recommendations.",
+    ],
+    flow: ["Case file", "Specialist agents", "Critical review", "Decision memo"],
+  },
+  {
+    title: "Autonomous Engineering Workflows",
+    focus: "AI Delivery · Review · Ownership",
+    summary:
+      "AI-assisted software delivery workflows designed to reduce implementation time while maintaining technical review, observability, security boundaries, and engineering ownership.",
+    details: [
+      "Accelerated implementation without removing engineering accountability.",
+      "Kept review, observability, and security boundaries in the loop.",
+      "Treated AI as an execution amplifier, not a substitute for ownership.",
+    ],
+    flow: ["Intent", "AI execution", "Technical review", "Observable delivery"],
+  },
+];
+
+const PREVIOUS_PROJECTS = [
   {
     title: "Damacom Tracking System",
     description:
-      "End-to-end delivery of the web platform used to track the panela production lifecycle. I led frontend architecture with React, Vite, TypeScript, and SASS, focusing on maintainability, performance, and clear operator workflows.",
+      "End-to-end delivery of the web platform used to track the panela production lifecycle. I led frontend architecture with React, Vite, TypeScript, and SASS.",
     link: "https://damacom.deno.dev/",
-    image: damacomImg.src,
+    image: damacomImg,
+    alt: "Damacom tracking system interface for panela production",
   },
   {
     title: "Alexandra Villarroel",
     description:
-      "Website implementation for an internationally recognized coach, balancing visual storytelling and performance. I executed the full experience using GSAP, Bootstrap, JavaScript, PHP, and MySQL, translating complex design into a polished production site.",
+      "Website implementation for an internationally recognized coach, balancing visual storytelling and performance with GSAP, Bootstrap, JavaScript, PHP, and MySQL.",
     link: "https://alexandravillarroel.com/",
-    image: alexandraImg.src,
-  },
-  {
-    title: "Ulpan Yovel",
-    description:
-      "Development of an educational platform where courses and teachers are managed from a centralized workflow. I built and customized the WordPress-based solution to support content operations and long-term maintainability.",
-    link: "https://ulpanyovel.com/ulpan/",
-    image: ulpanImg.src,
+    image: alexandraImg,
+    alt: "Alexandra Villarroel coaching website homepage",
   },
   {
     title: "Dressed in Blue",
     description:
-      "Design and development of a business website with strong SEO orientation for the Colombian market. I delivered a performant implementation with JavaScript, HTML, and SASS to support brand positioning and organic visibility.",
+      "Business website with strong SEO orientation for the Colombian market, delivered with JavaScript, HTML, and SASS to support brand positioning and organic visibility.",
     link: "https://dressedinblue.com.co/",
-    image: catsImg.src,
-  },
-  {
-    title: "Comp@rt",
-    description:
-      "Built a full stack content-sharing application inspired by Pinterest. I implemented the frontend with Next.js and Tailwind, and connected Sanity CMS through GraphQL for scalable content management.",
-    link: "https://compart.netlify.app/",
-    github: "https://github.com/oskr1103/front-compart",
-    image: comparteImg.src,
-  },
-  {
-    title: "Clone Spotify",
-    description:
-      "Built a Spotify-inspired product as an onboarding project, integrating external APIs and state-driven UI flows. Developed with React, TypeScript, Redux, and SASS under clean code and modular architecture practices. Note: access requires authorization because it is in development mode.",
-    link: "https://isai-music-clone.netlify.app/",
-    github: "https://github.com/oskr1103/music-app",
-    image: spotifyImg.src,
+    image: catsImg,
+    alt: "Dressed in Blue business website preview",
   },
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid gap-5 lg:grid-cols-2">
   {
-    PROJECTS.map(({ image, title, description, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Works Isai Colina"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              src={image}
-            />
+    AI_WORK.map(({ title, focus, summary, details, flow }, index) => (
+      <article
+        class:list={[
+          "group relative overflow-hidden border border-gray-200/90 bg-white/50 p-6 dark:border-white/10 dark:bg-white/[0.025] md:p-8",
+          index === 0 || index === 3 ? "lg:col-span-2" : "",
+          "rounded-xl",
+        ]}
+      >
+        <div class:list={["grid gap-8", index === 0 || index === 3 ? "lg:grid-cols-[1.15fr_.85fr] lg:items-start" : ""]}>
+          <div>
+            <div class="flex items-center justify-between gap-4">
+              <p class="text-xs font-semibold tracking-[0.15em] uppercase text-blue-700 dark:text-blue-300">
+                {focus}
+              </p>
+              <span class="font-mono text-sm text-gray-400 dark:text-gray-600">0{index + 1}</span>
+            </div>
+            <h3 class="mt-4 max-w-xl text-2xl font-bold tracking-tight text-gray-950 dark:text-gray-100 md:text-3xl">
+              {title}
+            </h3>
+            <p class="mt-4 max-w-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+              {summary}
+            </p>
+          </div>
+
+          <div class:list={["border-t border-gray-200 pt-6 dark:border-white/10", index === 0 || index === 3 ? "lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0" : ""]}>
+            <p class="text-xs font-semibold tracking-[0.16em] uppercase text-gray-500 dark:text-gray-400">
+              Capability path
+            </p>
+            <ol class="mt-4 grid gap-2">
+              {flow.map((step, stepIndex) => (
+                <li class="flex items-center gap-3">
+                  <span class="flex size-6 shrink-0 items-center justify-center rounded-sm bg-blue-100 font-mono text-[11px] font-semibold text-blue-900 dark:bg-blue-950 dark:text-blue-200">
+                    {stepIndex + 1}
+                  </span>
+                  <span class="text-sm font-medium text-gray-700 dark:text-gray-300">{step}</span>
+                  {stepIndex < flow.length - 1 && (
+                    <span class="ml-auto text-gray-300 dark:text-gray-700" aria-hidden="true">↓</span>
+                  )}
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
+        <ul class="mt-7 grid gap-3 border-t border-gray-200 pt-6 text-sm text-gray-700 dark:border-white/10 dark:text-gray-400 md:grid-cols-3">
+          {details.map((detail) => (
+            <li class="flex gap-2 leading-relaxed">
+              <span class="mt-2 size-1.5 shrink-0 rounded-full bg-blue-600 dark:bg-blue-300" aria-hidden="true"></span>
+              {detail}
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))
+  }
+</div>
+
+<section class="mt-20" aria-labelledby="previous-projects-heading">
+  <h3
+    id="previous-projects-heading"
+    class="mb-8 text-xl font-semibold text-gray-800 dark:text-white"
+  >
+    Previous Product & Web Projects
+  </h3>
+  <div class="grid gap-5 md:grid-cols-3">
+    {
+      PREVIOUS_PROJECTS.map(({ image, title, description, link, alt }) => (
+        <article class="group overflow-hidden rounded-xl border border-gray-200 bg-white/40 dark:border-white/10 dark:bg-white/[0.025]">
+          <div class="overflow-hidden border-b border-gray-200 dark:border-white/10">
+              <Image
+                alt={alt}
+                class="h-36 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                src={image}
+                widths={[480, 720, 960]}
+                sizes="(max-width: 768px) 100vw, 320px"
+                loading="lazy"
+              />
+          </div>
+
+          <div class="p-5">
+            <h4 class="text-lg font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h4>
+            <p class="mt-2 text-sm text-gray-700 dark:text-gray-400 leading-relaxed">
               {description}
-            </div>
+            </p>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
               {link && (
                 <LinkButton href={link}>
-                  <Link class="size-4" />
+                  <Link class="size-4" aria-hidden="true" />
                   Preview
                 </LinkButton>
               )}
             </footer>
           </div>
-        </div>
-      </article>
-    ))
-  }
-</div>
+        </article>
+      ))
+    }
+  </div>
+</section>

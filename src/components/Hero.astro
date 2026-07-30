@@ -7,46 +7,94 @@ import MediumIcon from "@/components/icons/Medium.astro";
 import YoutubeIcon from "@/components/icons/Youtube.astro";
 ---
 
-<div class="max-w-xl">
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hi, I'm Isai Colina
-  </h1>
-  <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-cyan-200 [&>strong]:text-cyan-800 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    Agentic AI Chapter Lead and Full Stack Engineering leader with over <strong
-      >7 years of experience</strong
-    > building scalable products, leading cross-functional teams, and turning
-    technical decisions into measurable business outcomes.
-  </p>
+<div class="grid items-start gap-12 lg:grid-cols-[minmax(0,1.55fr)_minmax(250px,.75fr)] lg:gap-16">
+  <div>
+    <p class="mb-4 flex items-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase text-blue-700 dark:text-blue-300">
+      <span class="h-px w-8 bg-blue-600 dark:bg-blue-300" aria-hidden="true"></span>
+      Engineering Lead · AI Systems
+    </p>
+    <h1
+      class="max-w-3xl text-5xl font-bold leading-[1.04] tracking-[-0.04em] text-gray-950 sm:text-6xl dark:text-white"
+    >
+      I turn AI into systems that teams can <span class="text-blue-700 dark:text-blue-300"
+        >operate and scale.</span
+      >
+    </h1>
+    <p class="mt-5 text-base font-medium text-gray-600 dark:text-gray-400">
+      Isai Colina · Engineering Lead
+    </p>
+    <p
+      class="mt-6 max-w-2xl text-xl leading-relaxed text-gray-700 dark:[&>strong]:text-blue-200 [&>strong]:text-blue-800 [&>strong]:font-semibold dark:text-gray-300"
+    >
+      Focused on AI engineering, enterprise AI systems, intelligent agents,
+      and agentic architectures. I lead cross-functional teams and connect
+      engineering execution with business outcomes — with over <strong>8 years
+      of experience</strong>.
+    </p>
 
-  <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:isaicolinapinto@gmail.com">
-      <MailIcon class="size-4" />
-      Contact
-    </SocialPill>
-    <SocialPill href="https://www.linkedin.com/in/isai-colina-pinto-57123b155/">
-      <LinkedInIcon class="size-4" />
-      LinkedIn
-    </SocialPill>
-    <SocialPill href="https://medium.com/@isaicolinapinto_70265">
-      <MediumIcon class="size-4" />
-      Medium
-    </SocialPill>
-    <SocialPill href="https://www.youtube.com/channel/UCT8C9RwEz_Ij7dYfvfbhCrw">
-      <YoutubeIcon class="size-4" />
-      Youtube
-    </SocialPill>
-  </nav>
-  <div class="flex flex-wrap mt-8">
-    <Badge>Technical Leadership</Badge>
-    <Badge>Agentic AI Systems</Badge>
-    <Badge>Multi-Agent Architecture</Badge>
-    <Badge>AI Delivery Strategy</Badge>
-    <Badge>Product-Oriented Engineering</Badge>
-    <Badge>Full Stack Systems</Badge>
-    <Badge>AWS / GCP</Badge>
+    <nav class="flex flex-wrap gap-3 mt-8" aria-label="Social profiles">
+      <SocialPill href="mailto:isaicolinapinto@gmail.com">
+        <MailIcon class="size-4" aria-hidden="true" />
+        Contact
+      </SocialPill>
+      <SocialPill href="https://www.linkedin.com/in/isai-colina-pinto-57123b155/">
+        <LinkedInIcon class="size-4" aria-hidden="true" />
+        LinkedIn
+      </SocialPill>
+      <SocialPill href="https://medium.com/@isaicolinapinto_70265">
+        <MediumIcon class="size-4" aria-hidden="true" />
+        Medium
+      </SocialPill>
+      <SocialPill href="https://www.youtube.com/channel/UCT8C9RwEz_Ij7dYfvfbhCrw">
+        <YoutubeIcon class="size-4" aria-hidden="true" />
+        Youtube
+      </SocialPill>
+    </nav>
   </div>
+
+  <aside class="border-l border-gray-300 pl-6 dark:border-white/15 lg:mt-10">
+    <p class="text-xs font-semibold tracking-[0.18em] uppercase text-gray-500 dark:text-gray-400">
+      How I lead
+    </p>
+    <ol class="mt-6 space-y-6">
+      <li class="grid grid-cols-[1.75rem_1fr] gap-3">
+        <span class="font-mono text-sm text-blue-700 dark:text-blue-300">01</span>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">Design for failure</p>
+          <p class="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Reliability, observability, and escalation are architecture concerns.
+          </p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[1.75rem_1fr] gap-3">
+        <span class="font-mono text-sm text-blue-700 dark:text-blue-300">02</span>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">Keep humans accountable</p>
+          <p class="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            AI expands execution; people retain ownership of outcomes.
+          </p>
+        </div>
+      </li>
+      <li class="grid grid-cols-[1.75rem_1fr] gap-3">
+        <span class="font-mono text-sm text-blue-700 dark:text-blue-300">03</span>
+        <div>
+          <p class="font-semibold text-gray-900 dark:text-white">Build reusable capability</p>
+          <p class="mt-1 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+            Platforms and standards should compound across teams and products.
+          </p>
+        </div>
+      </li>
+    </ol>
+  </aside>
 </div>
+
+<ul class="mt-12 flex flex-wrap gap-2 border-t border-gray-200 pt-6 dark:border-white/10" aria-label="Focus areas">
+  <li><Badge>AI Engineering Leadership</Badge></li>
+  <li><Badge>Enterprise AI Systems</Badge></li>
+  <li><Badge>AI Agents & Agentic Workflows</Badge></li>
+  <li><Badge>AI Architecture</Badge></li>
+  <li><Badge>AI Governance & Observability</Badge></li>
+  <li><Badge>Technical Strategy</Badge></li>
+  <li><Badge>Product & Engineering Alignment</Badge></li>
+  <li><Badge>AWS / GCP</Badge></li>
+</ul>

@@ -1,0 +1,44 @@
+---
+const EDUCATION = [
+  {
+    title: "Certificate Program in Agentic AI",
+    institution: "Johns Hopkins University, Whiting School of Engineering",
+    date: "Completed Jul 2026",
+    datetime: "2026-07",
+    description:
+      "Professional certificate focused on agentic AI systems, architecture, and applied engineering practices for intelligent workflows.",
+  },
+  {
+    title: "Business Administration",
+    institution: "Undergraduate degree",
+    date: "Graduate",
+    description:
+      "Business foundation that informs product strategy, organizational decision-making, and the connection between technical architecture and business outcomes.",
+  },
+];
+---
+
+<ol class="relative m-0 list-none border-y border-gray-200 p-0 dark:border-white/10">
+  {
+    EDUCATION.map(({ title, institution, date, datetime, description }, index) => (
+      <li class="grid gap-5 border-b border-gray-200 py-7 last:border-b-0 dark:border-white/10 md:grid-cols-[3rem_1fr_1.2fr] md:items-start">
+        <span class="font-mono text-sm text-blue-700 dark:text-blue-300">
+          0{index + 1}
+        </span>
+        <div>
+          <h3 class="text-xl font-bold tracking-tight text-gray-950 dark:text-white">{title}</h3>
+          <p class="mt-1 font-medium text-blue-700 dark:text-blue-300">
+            {institution}
+          </p>
+          <time
+            class="mt-2 block text-xs font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-500"
+            datetime={datetime}>{date}</time
+          >
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          {description}
+        </p>
+      </li>
+    ))
+  }
+</ol>

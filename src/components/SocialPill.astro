@@ -1,9 +1,17 @@
+---
+const { href, class: className, ...rest } = Astro.props;
+const isExternal = typeof href === "string" && href.startsWith("http");
+---
+
 <a
-  {...Astro.props}
-  target="_blank"
-  rel="noopener noreferrer"
-  role="link"
-  class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-cyan-800 dark:hover:bg-cyan-300 dark:border-cyan-200 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-cyan-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-cyan- focus-visible:ring-offset-2 active:bg-black"
+  href={href}
+  {...rest}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+  class:list={[
+    "inline-flex min-h-11 items-center justify-center gap-2 px-4 py-2 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 dark:border-gray-600 dark:text-white focus-visible:ring-blue-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-2 active:bg-black",
+    className,
+  ]}
 >
   <slot />
 </a>

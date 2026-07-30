@@ -7,37 +7,39 @@ interface Props {
   description: string;
   link?: string;
   date: string;
+  datetime?: string;
 }
 
-const { title, company, description, link, date } = Astro.props;
+const { title, company, description, link, date, datetime } = Astro.props;
 ---
 
 <div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
+  class="relative ml-8 grid pb-12 before:absolute before:left-[-23px] before:block before:h-full before:w-px before:bg-gray-200 before:content-[''] dark:before:bg-white/10 md:ml-12 md:grid-cols-5 md:gap-10 md:space-x-4 md:before:left-[-35px]"
 >
-  <div class="relative pb-12 md:col-span-2">
+  <div class="relative pb-4 md:pb-12 md:col-span-2">
     <div class="sticky top-0">
-      <span class="text-cyan-400 -left-[42px] absolute rounded-full text-5xl"
-        >&bull;</span
-      >
+      <span
+        class="absolute -left-[30px] top-1 size-3 rounded-full border-2 border-blue-700 bg-gray-50 dark:border-blue-300 dark:bg-gray-950 md:-left-[42px]"
+        aria-hidden="true"
+      ></span>
 
-      <h3 class="text-xl font-bold text-cyan-400">{title}</h3>
-      <h4 class="font-semibold text-xl text-gray-600 dark:text-white">
+      <h3 class="text-xl font-bold tracking-tight text-gray-950 dark:text-white">{title}</h3>
+      <h4 class="mt-1 font-medium text-blue-700 dark:text-blue-300">
         {company}
       </h4>
-      <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80"
-        >{date}</time
-      >
+      <time
+        class="mt-2 block p-0 text-xs font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-500"
+        datetime={datetime}>{date}</time>
     </div>
   </div>
   <div
-    class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"
+    class="relative flex flex-col gap-3 pb-4 text-gray-700 dark:text-gray-300 md:col-span-3 leading-relaxed"
   >
     {description}
     {
       link && (
         <LinkInline href={link}>
-          More{" "}
+          Company website{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-5 icon icon-tabler icon-tabler-chevron-right"
@@ -49,11 +51,10 @@ const { title, company, description, link, date } = Astro.props;
             fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
+            aria-hidden="true"
           >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 6l6 6l-6 6" />
           </svg>
         </LinkInline>
       )

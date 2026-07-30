@@ -2,53 +2,67 @@
 import Layout from "@/layouts/Layout.astro";
 
 import AboutMe from "@/components/AboutMe.astro";
-import Briefcase from "@/components/icons/Briefcase.astro";
-import CodeIcon from "@/components/icons/Code.astro";
 import Experience from "@/components/Experience.astro";
-import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Education from "@/components/Education.astro";
 import Projects from "@/components/Projects.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 ---
 
 <Layout
-  title="Isai Colina portfolio - Agentic AI Chapter Lead and Full Stack Engineering Leader"
-  description="Isai Colina is an Agentic AI Chapter Lead and full stack engineering leader focused on scalable systems, technical strategy, and measurable business impact."
+  title="Isai Colina | Engineering Lead in AI Systems"
+  description="Isai Colina is an Engineering Lead focused on AI engineering, enterprise AI systems, intelligent agents, and technical leadership."
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+    <SectionContainer class="py-20 md:py-32">
       <Hero />
     </SectionContainer>
+
+    <div class="space-y-28 pb-20 md:space-y-36">
+      <SectionContainer id="experience" class="border-t border-gray-200 pt-10 dark:border-white/10">
+        <p class="mb-3 font-mono text-xs tracking-[0.2em] text-blue-700 dark:text-blue-300">
+          01 / EXPERIENCE
+        </p>
+        <h2 class="mb-8 text-4xl font-bold tracking-[-0.03em] text-gray-950 dark:text-white">
+          From product delivery to AI engineering leadership.
+        </h2>
+        <Experience />
+      </SectionContainer>
+
+      <SectionContainer id="work" class="border-t border-gray-200 pt-10 dark:border-white/10">
+        <p class="mb-3 font-mono text-xs tracking-[0.2em] text-blue-700 dark:text-blue-300">
+          02 / SELECTED WORK
+        </p>
+        <h2 class="mb-5 text-4xl font-bold tracking-[-0.03em] text-gray-950 dark:text-white">
+          AI systems designed for real operating conditions.
+        </h2>
+        <p class="mb-8 max-w-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+          Architecture and leadership cases across enterprise AI, intelligent
+          agents, agentic workflows, governance, and engineering ownership.
+          Details are framed at the capability level to protect confidential information.
+        </p>
+        <Projects />
+      </SectionContainer>
+
+      <SectionContainer id="education" class="border-t border-gray-200 pt-10 dark:border-white/10">
+        <p class="mb-3 font-mono text-xs tracking-[0.2em] text-blue-700 dark:text-blue-300">
+          03 / EDUCATION
+        </p>
+        <h2 class="mb-8 text-4xl font-bold tracking-[-0.03em] text-gray-950 dark:text-white">
+          Technical depth grounded in business context.
+        </h2>
+        <Education />
+      </SectionContainer>
+
+      <SectionContainer id="about" class="border-t border-gray-200 pt-10 dark:border-white/10">
+        <p class="mb-3 font-mono text-xs tracking-[0.2em] text-blue-700 dark:text-blue-300">
+          04 / ABOUT
+        </p>
+        <h2 class="mb-8 text-4xl font-bold tracking-[-0.03em] text-gray-950 dark:text-white">
+          Engineering judgment, organizational accountability.
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
-  <div class="space-y-24">
-    <SectionContainer id="experience">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <Briefcase class="size-8" />
-        Work experience
-      </h2>
-      <Experience />
-    </SectionContainer>
-
-    <SectionContainer id="projects">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <CodeIcon class="size-7" />
-        Projects
-      </h2>
-      <Projects />
-    </SectionContainer>
-
-    <SectionContainer id="about">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        About me
-      </h2>
-      <AboutMe />
-    </SectionContainer>
-  </div>
 </Layout>

@@ -1,16 +1,28 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro";
-const EXPERIENCIE = [
+
+const EXPERIENCE = [
   {
-    date: "Dec 2025 - Present",
-    title: "Agentic AI Chapter Lead",
+    date: "Aug 2026 - Present",
+    datetime: "2026-08",
+    title: "Engineering Lead",
     company: "Finkargo",
     description:
-      "I lead the Agentic AI chapter, defining architecture and delivery standards for autonomous systems. I drive decision frameworks, ownership models, and failure-handling strategies to ensure reliable production behavior. I coordinate engineering, product, and operations to prioritize high-impact initiatives and execute them end to end. I mentor engineers and strengthen team capabilities to scale quality and business outcomes.",
+      "I lead AI engineering initiatives spanning enterprise AI systems, intelligent agents, agentic workflows, automation, and reusable AI capabilities. I define architecture, delivery standards, governance mechanisms, and operating models for production AI while coordinating engineering, product, and business teams.",
     link: "https://www.finkargo.com/",
   },
   {
-    date: "Aug 2022 - Dec 2025",
+    date: "Sep 2024 - Jul 2026",
+    datetime: "2024-09",
+    title: "Senior Frontend Engineer / Agentic AI Chapter Lead",
+    company: "Finkargo",
+    description:
+      "I evolved from product engineering into the leadership of the Agentic AI chapter, driving the design and delivery of internal agents, customer-facing assistants, autonomous development workflows, and foundational AI capabilities.",
+    link: "https://www.finkargo.com/",
+  },
+  {
+    date: "Aug 2022 - Aug 2024",
+    datetime: "2022-08",
     title: "Senior Full Stack Developer",
     company: "PRAGMA",
     description:
@@ -19,6 +31,7 @@ const EXPERIENCIE = [
   },
   {
     date: "Dec 2020 - Jul 2022",
+    datetime: "2020-12",
     title: "Webmaster - Professional IV",
     company: "Colpensiones",
     description:
@@ -27,6 +40,7 @@ const EXPERIENCIE = [
   },
   {
     date: "2018 - 2020",
+    datetime: "2018",
     title: "Full Stack Developer and Team Lead",
     company: "Rehobot Technology SAS",
     description:
@@ -34,6 +48,7 @@ const EXPERIENCIE = [
   },
   {
     date: "Jun 2019 - Dec 2020",
+    datetime: "2019-06",
     title: "Full Stack and Support Engineer",
     company: "Litsor Publicidad LTDA",
     description:
@@ -42,6 +57,7 @@ const EXPERIENCIE = [
   },
   {
     date: "2017 - 2018",
+    datetime: "2017",
     title: "Full Stack Developer",
     company: "PCD Multiformas SAS",
     description:
@@ -51,11 +67,11 @@ const EXPERIENCIE = [
 ];
 ---
 
-<ol class="relative mt-16">
+<ol class="relative mt-10 list-none p-0 m-0">
   {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="">
-        <ExperienceItem {...experiencie} />
+    EXPERIENCE.map((experience) => (
+      <li>
+        <ExperienceItem {...experience} />
       </li>
     ))
   }

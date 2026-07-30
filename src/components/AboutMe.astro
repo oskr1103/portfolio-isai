@@ -1,47 +1,60 @@
 ---
-const personalImageAlt = "Isai Colina Senior Developer";
+const personalImageAlt = "Isai Colina, Engineering Lead";
+import { Image } from "astro:assets";
 import me from "../assets/isaiSquare.jpg";
 ---
 
 <article
-  class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"
+  class="grid items-start gap-10 text-gray-700 dark:text-gray-300 md:grid-cols-[minmax(0,1fr)_280px] lg:gap-16"
 >
-  <img
-    width="200"
-    height="200"
-    src={me.src}
-    alt={personalImageAlt}
-    class="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-64 aspect-square rounded-2xl"
-    style="object-position: 50% 50%"
-  />
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-cyan-500 dark:[&>p>strong]:text-cyan-200 text-pretty order-2"
+    class="[&>p]:mb-5 [&>p>strong]:text-blue-700 dark:[&>p>strong]:text-blue-200 text-pretty leading-relaxed"
   >
     <p>
-      Hello, I'm Isai Colina. I am a technology professional with <strong>
-        over 7 years of experience</strong
-      > across full stack engineering, product execution, and technical leadership.
-      My current focus is designing agentic AI systems that help teams make better
-      decisions and operate with greater reliability.
+      I’m Isai Colina, an <strong>Engineering Lead</strong> with over <strong
+        >8 years of experience</strong
+      > across software engineering, product delivery, and technical leadership.
     </p>
     <p>
-      I work at the intersection of AI strategy, systems architecture, and delivery.
-      I define decision boundaries, ownership models, and failure-handling patterns
-      that make autonomous workflows observable, controllable, and production-ready.
+      My current work focuses on enterprise AI systems: intelligent agents,
+      agentic workflows, retrieval, internal tools, automation, memory,
+      observability, and human oversight. I care not only about what AI can do,
+      but also about how it behaves in production, how decisions are governed,
+      and how teams remain accountable for the outcomes.
     </p>
-
     <p>
-      Beyond architecture, I lead teams and collaboration across engineering, product,
-      and operations to align technical initiatives with measurable business impact.
-      I enjoy mentoring, setting standards, and building environments where high
-      quality execution can scale.
+      I lead initiatives across engineering, product, and operations,
+      translating complex business processes into reliable technical
+      capabilities. My background in Business Administration also helps me
+      connect architecture and delivery decisions with organizational impact.
     </p>
-
     <p>
-      As a graduate in Business Administration, I bring a practical perspective for
-      connecting technology decisions with organizational goals. I am interested in
-      leadership opportunities where AI, product strategy, and engineering can drive
-      meaningful transformation.
+      Alongside my industry work, I write about AI engineering, intelligent
+      agents, enterprise architecture, and engineering leadership. My long-term goal is to
+      contribute to both industry and academia by helping future engineers
+      understand how intelligent systems are designed, operated, and governed.
     </p>
   </div>
+  <aside>
+    <div class="relative overflow-hidden rounded-tl-[3rem] rounded-br-[3rem]">
+      <Image
+        width={280}
+        height={320}
+        src={me}
+        alt={personalImageAlt}
+        class="h-80 w-full object-cover grayscale-[20%]"
+        loading="lazy"
+        widths={[280, 400, 560]}
+        sizes="(max-width: 768px) 100vw, 280px"
+      />
+      <div class="absolute inset-x-0 bottom-0 bg-gray-950/80 p-5 text-white backdrop-blur-sm">
+        <p class="text-xs font-semibold tracking-[0.16em] uppercase text-blue-200">
+          Current focus
+        </p>
+        <p class="mt-2 text-sm leading-relaxed text-gray-200">
+          Production AI systems, technical leadership, and engineering education.
+        </p>
+      </div>
+    </div>
+  </aside>
 </article>
