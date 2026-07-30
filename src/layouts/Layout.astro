@@ -12,6 +12,76 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
+const siteURL = Astro.site ?? new URL("https://isaicolina.com/");
+const canonicalURL = new URL(Astro.url.pathname, siteURL);
+const socialImageURL = new URL(favicon.src, siteURL);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://isaicolina.com/#website",
+      url: "https://isaicolina.com/",
+      name: "Isai Colina",
+      inLanguage: "en",
+      publisher: { "@id": "https://isaicolina.com/#person" },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://isaicolina.com/#webpage",
+      url: canonicalURL.href,
+      name: title,
+      description,
+      isPartOf: { "@id": "https://isaicolina.com/#website" },
+      mainEntity: { "@id": "https://isaicolina.com/#person" },
+    },
+    {
+      "@type": "Person",
+      "@id": "https://isaicolina.com/#person",
+      name: "Isai Colina",
+      url: "https://isaicolina.com/",
+      image: socialImageURL.href,
+      jobTitle: "Engineering Lead",
+      description,
+      worksFor: {
+        "@type": "Organization",
+        name: "Finkargo",
+        url: "https://www.finkargo.com/",
+      },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Universidad Alejandro de Humboldt",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Caracas",
+          addressCountry: "VE",
+        },
+      },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        name: "Certificate Program in Agentic AI",
+        recognizedBy: {
+          "@type": "CollegeOrUniversity",
+          name: "Johns Hopkins University, Whiting School of Engineering",
+        },
+      },
+      sameAs: [
+        "https://www.linkedin.com/in/isai-colina-pinto-57123b155/",
+        "https://medium.com/@isaicolinapinto_70265",
+        "https://www.youtube.com/channel/UCT8C9RwEz_Ij7dYfvfbhCrw",
+      ],
+      knowsAbout: [
+        "AI engineering",
+        "Enterprise AI systems",
+        "Intelligent agents",
+        "Agentic architectures",
+        "AI governance",
+        "Engineering leadership",
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -19,10 +89,29 @@ const { description, title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="author" content="Isai Colina" />
+    <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/png" href={favicon.src} />
+    <link rel="canonical" href={canonicalURL.href} />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={socialImageURL.href} />
+    <meta property="og:image:alt" content="Isai Colina, Engineering Lead" />
+    <meta property="og:site_name" content="Isai Colina" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="profile:first_name" content="Isai" />
+    <meta property="profile:last_name" content="Colina" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageURL.href} />
+    <meta name="theme-color" content="#111827" />
     <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <ViewTransitions />
   </head>
 
